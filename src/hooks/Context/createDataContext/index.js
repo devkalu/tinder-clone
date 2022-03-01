@@ -1,7 +1,6 @@
 import React, { useReducer, createContext } from "react";
 
 export default (reducer, actions, initialState) => {
-  console.log(reducer);
   const Context = createContext();
   const Provider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);

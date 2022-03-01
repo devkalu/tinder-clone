@@ -1,18 +1,20 @@
 import "react-native-gesture-handler";
+import React, { useContext } from "react";
 
 import { createStackNavigator } from "@react-navigation/stack";
 
 import SwipeScreen from "../../screen/SwipeScreen";
 import ChatScreen from "../../screen/ChatScreen";
 import AuthenticationScreen from "../../screen/AuthenticationScreen";
+import { Context } from "../../hooks/Context/AuthContext";
 
 const Stack = createStackNavigator();
 
 function StackNavigator() {
-  const isSignnedIn = true;
+  const { state } = useContext(Context);
   return (
     <Stack.Navigator>
-      {isSignnedIn ? (
+      {state[0].isSignedIn ? (
         <>
           <Stack.Screen name="Home" component={SwipeScreen} />
           <Stack.Screen name="Chat" component={ChatScreen} />

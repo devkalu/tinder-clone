@@ -15,5 +15,5 @@ const authReducer = (state, action) => {
 //Authentication Context and Provider
 
 export const { Context, Provider } = createDataContext(authReducer, {}, [
-  { name: "chibueze" },
+  { name: "chibueze", isSignedIn: true },
 ]);
